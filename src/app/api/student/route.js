@@ -110,7 +110,7 @@ export const DELETE = async (request) => {
     return NextResponse.json(
       {
         ok: false,
-        message: `Student ID must contain 9 characters`,
+        message: `Student ID does not exist`,
       },
       {
         status: 400,
@@ -123,7 +123,7 @@ export const DELETE = async (request) => {
   DB.students = DB.students.filter((std) => std.studentId !== body.studentId);
   //or 2. use splice array method
   // DB.students.splice(...)
-  DB.students.splice((std) => std.studentId !== body.studentId);
+  DB.students = DB.students.splice((std) => std.studentId !== body.studentId);
 
   return NextResponse.json({
     ok: true,
