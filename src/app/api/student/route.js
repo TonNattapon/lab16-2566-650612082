@@ -64,7 +64,7 @@ export const POST = async (request) => {
   DB.students.push(body);
   return NextResponse.json({
     ok: true,
-    mesage: `Student Id ${body.studentId} has been added`,
+    message: `Student Id ${body.studentId} has been added`,
   });
 };
 
